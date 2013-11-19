@@ -11,13 +11,35 @@
     }
 }
 body {
-  background-image: image-url("grid-18px-masked.png");
+   //background-image: image-url("grid-18px-masked.png");
+ // background-image: image-url("architechture.jpg");
+  // background-size:100px 60px;
   background-position: 0 40px;
   background-repeat: repeat-x;
 }
 .sidebar-nav {
   padding: 8px 0;
 }
-footer {
-	text-align: center;
+
+
+#footer {
+    bottom: 0;
+    background-color: #D44413;
+    color: white;
+    height: 80px;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+.thumbnail {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    display: block;
+    line-height: 1;
+    padding: 4px;
+}
+.inputs label {
+  color: #D44413;
+  font-weight: bold;
 }
