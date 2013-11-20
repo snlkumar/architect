@@ -13,6 +13,8 @@ gem 'devise'
 gem 'simple_form'
 gem 'execjs'
 gem 'therubyracer'
+gem 'country-select'
+gem "paperclip", "~> 3.0"
 
 
 # Gems used only for assets and not required

@@ -1,0 +1,28 @@
+<h3>The skills records</h3>
+
+<table class="table table-bordered">
+  <thread>
+  <colgroup>
+    <col />
+    <col class="actions" />
+  </colgroup>
+  <tr>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+<% @skills.each do |skill| %>
+  <tr>
+    <td><%= skill.name %></td>
+    <td><%= link_to 'Show', skill %></td>
+    <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
+    <td><%= link_to 'Destroy', skill, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+<%= will_paginate @skills %>
+<br />
+
+<%= link_to 'Input Skill', new_skill_path, :class => 'btn btn-primary' %>

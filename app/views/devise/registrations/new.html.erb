@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<legend>Sign up</legend>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -7,13 +7,30 @@
     <%= f.input :firstname, :required => true, :autofocus => true %>
     <%= f.input :lastname, :required => true%>
     <%= f.input :email ,:required => true%>
-    <%= f.input :contact_no, :required =>true %>
-    <%= f.input :password, :required => true %>
+    <%= f.input :contact_no, :required =>true %>    
+    <%= f.input :language, :required =>true %>
+    <label for="user_type" class="control-label">Country</label>
+    <div class="controls " id="country">
+    <%= f.country_select :country, nil, :required => true,:html=>{:class=>"selectpicker"} %>
+    </div><br />
+    <%= f.input :password, :required => true %>    
     <%= f.input :password_confirmation, :required => true %>
-  </div>
-
-  <div class="actions">
-    <%= f.button :submit, "Sign up",:class=>"btn-primary" %>
+    <%= f.file_field :avatar %>
+    <label for="user_type" class="control-label">Who are you?</label>
+    <div class="controls" id="who_are_you"> 
+    	<%= f.hidden_field :role, :value => 'client' %>
+       <button type="button" name="role" value="client" class="who_btn btn active">Client</button>&nbsp;
+       <button type="button" name="role" value="architect" class="who_btn btn ">Architect</button></div>      
+   </div>   <br />
+   <!-- <div class="span2">
+   	<pre class="prettyprint" style="text-align: right">
+      <button class="btn btn-primary" type="submit">Save</button>
+    </pre>
+   </div> -->
+  <div class="actions span4">
+  	<p style="text-align: center">
+    <%= f.button :submit, "Sign up",:class=>"btn-primary btn-lg" %>
+    </p>
   </div>
 <% end %>
 

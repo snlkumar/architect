@@ -6,9 +6,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :firstname,:lastname,:email,:contact_no, :password, :password_confirmation, :remember_me
+  attr_accessible :firstname,:lastname,:email,:contact_no, :password, :password_confirmation, :remember_me,:language,:qualification,
+  :role,:country,:avatar
   validates :firstname,:contact_no, presence: true,:length => { :minimum => 3 }
   validates :email,presence: true, uniqueness: true
+  has_many :skills,:dependent => :destroy
+  accepts_nested_attributes_for :skills
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   # attr_accessible :title, :body
 
 protected

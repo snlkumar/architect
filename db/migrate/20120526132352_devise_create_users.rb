@@ -7,7 +7,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :contact_no,         :null => false, :default => ""
       t.string :email,              :null => true, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
-
+      t.string :country,:default=>"India"
+      t.string :language,:default=>"English"
+      t.string :qualification
+      t.string :role
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

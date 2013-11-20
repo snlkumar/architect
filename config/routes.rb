@@ -1,8 +1,16 @@
 PlForm::Application.routes.draw do
+  resources :skills
+
+
   devise_for :users
 
   get "home/index"
   root :to => 'home#index'
+  resources :users do
+    collection do
+      get :profile
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

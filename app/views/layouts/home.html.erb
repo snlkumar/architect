@@ -25,12 +25,15 @@
         <a class="brand" href="#">E-architecture</a>
         <div class="btn-group pull-right">
 <% if user_signed_in? %>
+			<%= image_tag current_user.avatar.url(:thumb) %>
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-user"></i> <%= current_user.badge %>
+            <i class="icon-user"></i> <%= current_user.firstname %>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Profile', edit_user_registration_path %></li>
+          	<li><%= link_to 'Profile', profile_users_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'setting', edit_user_registration_path %></li>
             <li class="divider"></li>
             <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
           </ul>
