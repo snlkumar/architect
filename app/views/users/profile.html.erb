@@ -6,7 +6,11 @@
 		<section id="left">
 			<div id="userStats" class="clearfix">
 				<div class="pic">
-					<a href="#"><img src="../assets/user_avatar.jpg" width="150" height="150" /></a>
+					<%unless @user.avatar.blank?%>
+					<a data-toggle="modal" href="#image-change-modal"><%= image_tag @user.avatar.url ,:width=>"150",:height=>"150" %></a>
+					<%else%>
+					<a data-toggle="modal" href="#image-change-modal"><img src="../assets/user_avatar.jpg" width="150" height="150" /></a>
+				    <%end%>
 				</div>
 				
 				<div class="data">
@@ -29,62 +33,23 @@
 			<legend>About me:</legend>			
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		    <legend>Qualification:</legend>
+		    <%= render "qualification"%>
 		    <legend>Experience:</legend>
-		    <legend>Skill:</legend>
+		    <%= render "experience"%>
+		    <%unless current_user.role=="Client"%>
+		    <legend style="border-color:">Skill:</legend>
+		    <hr />
+		    <%= render "skills"%>
+		    <%end%>
 		    <legend>Portfolio:</legend>
+		    <%= render "portfolio"%>
 		    <legend>Work History:</legend>
-		    <legend>About me:</legend>
+		    <%= render "history"%>
+		    <legend>Resume</legend>
+		    <%= render "attached_document"%>
+		   
 		</section>
-		
-		<!-- <section id="right">
-			<div class="gcontent">
-				<div class="head"><h1>Badges(3)</h1></div>
-				<div class="boxy">
-					<p>Keep working to unlock badges!</p>
-					
-					<div class="badgeCount">
-						<a href="#"><img src="img/foursquare-badge.png" /></a>
-						<a href="#"><img src="img/foursquare-badge.png" /></a>
-						<a href="#"><img src="img/foursquare-badge.png" /></a>
-					</div>
-					
-					<span><a href="#">See all…</a></span>
-				</div>
-			</div>
-			
-			<div class="gcontent">
-				<div class="head"><h1>Friends List</h1></div>
-				<div class="boxy">
-					<p>Your friends - 106 total</p>
-					
-					<div class="friendslist clearfix">
-						<div class="friend">
-							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Jerry K." /></a><span class="friendly"><a href="#">Jerry K.</a></span>
-						</div>
-						
-						<div class="friend">
-							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Katie F." /></a><span class="friendly"><a href="#">Katie F.</a></span>
-						</div>
-						
-						<div class="friend">
-							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Ash K." /></a><span class="friendly"><a href="#">Ash K.</a></span>
-						</div>
-						
-						<div class="friend">
-							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Sponge B." /></a><span class="friendly"><a href="#">Sponge B.</a></span>
-						</div>
-						
-						<div class="friend">
-							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Frank" /></a><span class="friendly"><a href="#">Frank</a></span>
-						</div>
-						
-						<div class="friend">
-							<a href="#"><img src="img/friend_avatar_default.jpg" width="30" height="30" alt="Alexa S." /></a><span class="friendly"><a href="#">Alexa S.</a></span>
-						</div>
-					</div>
-					
-					<span><a href="#">See all...</a></span>
-				</div>
-			</div>
-		</section> -->
+		<div class="modal hide fade" id="image-change-modal" style="display: none; ">
+     <%= render 'change_image'%>
+       </div>
 	</div>

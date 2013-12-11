@@ -1,4 +1,7 @@
 PlForm::Application.routes.draw do
+  resources :portfolios
+
+
   resources :skills
 
 

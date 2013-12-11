@@ -1,0 +1,31 @@
+<h3>The portfolios records</h3>
+
+<table class="table table-bordered">
+  <thread>
+  <colgroup>
+    <col />
+    <col />
+    <col class="actions" />
+  </colgroup>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+<% @portfolios.each do |portfolio| %>
+  <tr>
+    <td><%= portfolio.title %></td>
+    <td><%= portfolio.description %></td>
+    <td><%= link_to 'Show', portfolio %></td>
+    <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
+    <td><%= link_to 'Destroy', portfolio, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+<%= will_paginate @portfolios %>
+<br />
+
+<%= link_to 'Input Portfolio', new_portfolio_path, :class => 'btn btn-primary' %>

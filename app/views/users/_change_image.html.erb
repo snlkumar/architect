@@ -1,0 +1,37 @@
+<style type="text/css" !imortent>
+	hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 18px 0;
+}
+</style>
+
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">×</button>
+  <h3>Change Image</h3>
+  <hr />
+</div>
+<div class="modal-body">
+	<%=form_for @user do |f| %>
+  
+    <fieldset>
+      <div class="control-group">
+        <label class="control-label" for="input01"><%= f.label :avatar %></label>
+        <div class="controls">
+          <%= f.file_field :avatar %>
+        </div>
+      </div>
+    </fieldset>
+
+</div>
+<div class="modal-footer">
+  <a href="#" class="btn btn-danger" data-dismiss="modal">Close</a>
+  <button type="submit" class="btn btn-primary">Change Image</button>
+  
+</div>
+<%end%>

@@ -15,12 +15,13 @@
     </div><br />
     <%= f.input :password, :required => true %>    
     <%= f.input :password_confirmation, :required => true %>
-    <%= f.file_field :avatar %>
+    <% f.file_field :avatar %>
     <label for="user_type" class="control-label">Who are you?</label>
     <div class="controls" id="who_are_you"> 
     	<%= f.hidden_field :role, :value => 'client' %>
-       <button type="button" name="role" value="client" class="who_btn btn active">Client</button>&nbsp;
-       <button type="button" name="role" value="architect" class="who_btn btn ">Architect</button></div>      
+    
+<div class="make-switch who_btn" data-on="warning" data-off="danger"><input type="checkbox" class="who_btn" checked></div>
+            
    </div>   <br />
    <!-- <div class="span2">
    	<pre class="prettyprint" style="text-align: right">

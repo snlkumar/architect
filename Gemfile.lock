@@ -1,5 +1,11 @@
+GIT
+  remote: https://github.com/ryanb/nested_form.git
+  revision: 1b0689dfb4d230ceabd278eba159fcb02f23c68a
+  specs:
+    nested_form (0.3.2)
+
 GEM
-  remote: http://ruby.taobao.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (3.2.15)
       actionpack (= 3.2.15)
@@ -78,7 +84,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
-    pg (0.16.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -151,8 +156,8 @@ DEPENDENCIES
   execjs
   jquery-rails
   mysql2
+  nested_form!
   paperclip (~> 3.0)
-  pg
   rails (= 3.2.15)
   sass-rails (~> 3.2)
   simple_form

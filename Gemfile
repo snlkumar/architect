@@ -1,16 +1,17 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'pg'
+# gem 'pg'
 gem 'mysql2'
 gem 'win32console', :platforms => :mingw
 gem 'anjlab-bootstrap-rails', '>= 2.0', '< 3.0', :require => 'bootstrap-rails'
 gem 'bootstrap-will_paginate'
 gem 'devise'
 gem 'simple_form'
+gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'execjs'
 gem 'therubyracer'
 gem 'country-select'
